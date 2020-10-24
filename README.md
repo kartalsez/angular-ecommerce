@@ -3,7 +3,7 @@
 * Run npm install
 * Run ng serve or npm run start
 
-## About App
+## About App [Live Demo](https://kartalsez.github.io/angular-ecommerce/products)
 * Backend have not been implemented yet.Because of that this app is 
 running with mock datas (Shopping cart, product list, categories, ...).
 * Material design is used.
