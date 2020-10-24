@@ -1,0 +1,10 @@
+<main>
+  <mat-sidenav-container fxLayout="row" fxLayoutAlign="space-between" class="sidenav-container">
+    <mat-sidenav fxFlex="20" fxFlex.xs="50" fxFlex.sm="50" #sidenav [opened]="sidenavOpen" [mode]="sidenavOpen ? 'side' : 'over'" perfectScrollbar>
+      <eagle-sidebar></eagle-sidebar>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlex>
+      <eagle-content (sidenavClick)="sidenav.toggle()"></eagle-content>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</main>

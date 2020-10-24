@@ -1,0 +1,24 @@
+<mat-card class="product-item text-center">
+  <mat-chip-list >
+    <mat-chip color="warn" selected="true">{{productItem.discount}}% OFF</mat-chip>
+  </mat-chip-list>
+  <a class="image-link">
+    <img [src]="productItem.imgUrl" alt="">
+  </a>
+  <h4 class="category text-muted">{{productItem.categoryName}}</h4>
+  <a class="title text-truncate">
+    {{productItem.productName}}
+  </a>
+  <div fxLayout="row" fxLayoutAlign="space-between center" class="prices">
+    <div fxLayout="column" fxLayoutAlign="center start">
+      <p class="old-price text-muted"><span *ngIf="true">${{productItem.oldPrice | number : '1.2-2'}}</span></p>
+      <p class="new-price">${{productItem.newPrice | number : '1.2-2'}}</p>
+    </div>
+    <!--        <app-rating [ratingsCount]="product.ratingsCount" [ratingsValue]="product.ratingsValue" [direction]="'column'"></app-rating>-->
+  </div>
+  <div class="divider mt-2"></div>
+  <div class="icons">
+    <i class="fas fa-shopping-cart fa-lg" style="margin-right: 8px; cursor: pointer;" (click)="onClickIconBtn(clickIconBtnType.ADD_TO_BASKET)"></i>
+    <i class="fas fa-eye fa-lg" style="cursor: pointer;" (click)="onClickIconBtn(clickIconBtnType.VIEW_ON_BASKET)"></i>
+  </div>
+</mat-card>

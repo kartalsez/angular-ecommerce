@@ -1,0 +1,46 @@
+.product-item{
+  position: relative;
+  .mat-chip-list{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    &.list-view{
+      left: 10px;
+    }
+  }
+  .image-link{
+    display: block;
+  }
+  img{
+    max-width: 100%;
+    margin-bottom: 12px;
+    max-height: 100px;
+  }
+  .category{
+    margin-bottom: 4px;
+  }
+  .title{
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 18px;
+  }
+  .prices{
+    margin: 12px 0;
+    .old-price{
+      text-decoration: line-through;
+      height: 15px;
+    }
+    .new-price{
+      font-size: 16px;
+      font-weight: 500;
+    }
+  }
+  .icons{
+    margin-top: 18px;
+  }
+}
+.old-price{
+  text-decoration: line-through;
+}

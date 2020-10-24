@@ -1,0 +1,26 @@
+
+main {
+  height: 100%;
+  background-color: #fafafa;
+  padding: 16px;
+  .sidenav-container {
+    height: 100%;
+    overflow: auto;
+    margin-bottom: 16px;
+
+    mat-sidenav {
+      min-width: 20%;
+      width: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    padding: 0 !important;
+    mat-sidenav-content {
+      padding: 0 !important;
+    }
+    .sidenav-container {
+      margin-right: 0;
+    }
+  }
+}

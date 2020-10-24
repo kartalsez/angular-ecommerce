@@ -1,0 +1,48 @@
+<header fxLayout="row" fxLayoutAlign="space-between center">
+  <img class="logo" src="assets/images/kangal_logo.png">
+  <div fxLayout="row" fxLayoutAlign="space-between center"[matMenuTriggerFor]="cartMenu" #cartMenuTrigger="matMenuTrigger">
+    <i class="fas fa-shopping-cart fa-2x" [matBadge]="cartItemData.totalCount" matBadgeSize="medium"></i>
+    <span *ngIf="!isMobile">Shopping Cart</span>
+    <i class="fas fa-caret-down fa-2x"></i>
+    <mat-menu #cartMenu="matMenu" [overlapTrigger]="false" xPosition="before" class="top-menu-dropdown cart-dropdown">
+      <ng-template matMenuContent>
+        <span class="d-block">
+            <div fxLayout="row" fxLayoutAlign="space-between center" class="text-muted">
+                <b><span>{{cartItemData.totalCount}} ITEM<span *ngIf="cartItemData.cartItems.length > 1">S</span></span></b>
+                <b><a class="text-muted">VIEW CART</a></b>
+            </div>
+            <div class="divider mt-1"></div>
+            <div *ngIf="cartItemData.cartItems.length === 0" class="py-1 text-muted text-center">You have no items in your shopping cart.</div>
+            <mat-list>
+              <mat-list-item *ngFor="let cartItem_ of cartItemData.cartItems">
+                  <h3 matLine class="text-muted"> {{cartItem_.name}} </h3>
+                  <p matLine class="text-muted">
+                      <bdi>{{cartItem_.count}} x ${{cartItem_.price | number : '1.2-2'}}</bdi>
+                  </p>
+                  <img [src]="cartItem_.imageUrl" style="width: 70px;" alt="image">
+                  <button mat-icon-button color="warn" class="remove" (click)="stopClickPropagate($event)" matTooltip="Remove" matTooltipPosition="before">
+                      <mat-icon class="mat-icon-sm">close</mat-icon>
+                  </button>
+              </mat-list-item>
+            </mat-list>
+            <div *ngIf="cartItemData.totalPrice > 0" class="cart-dropdown-footer">
+                <div class="divider mt-1"></div>
+                <div fxLayout="row" fxLayoutAlign="space-between center" class="text-muted mt-1">
+                    <b>TOTAL:</b>
+                    <b class="new-price">${{cartItemData.totalPrice | number : '1.2-2'}}</b>
+                </div>
+                <div class="divider mt-1"></div>
+                <div fxLayout="row" fxLayoutAlign="space-between center" class="mt-1">
+                    <button mat-mini-fab color="warn" (click)="stopClickPropagate($event)" matTooltip="Clear All" matTooltipPosition="after">
+                        <mat-icon>remove_shopping_cart</mat-icon>
+                    </button>
+                    <a mat-mini-fab color="primary" matTooltip="Checkout" matTooltipPosition="before">
+                        <mat-icon>check</mat-icon>
+                    </a>
+                </div>
+            </div>
+        </span>
+      </ng-template>
+    </mat-menu>
+  </div>
+</header>

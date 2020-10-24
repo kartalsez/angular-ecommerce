@@ -1,0 +1,31 @@
+:host {
+  header {
+    background: #6b818c;
+    color: #fff;
+    height: 100px;
+    padding: 16px;
+    .logo {
+      width: 150px !important;
+    }
+    div {
+      padding: 8px;
+      cursor: pointer;
+      * {
+        margin-right: 4px;
+        color: white;
+      }
+      span {
+        font-size: 13px;
+        font-weight: 400;
+      }
+      .mat-badge-content {
+        color: white !important;
+        background: #F44336 !important;
+      }
+    }
+    div:hover {
+      background-color: #5a6a73;
+      border-radius: 8px;
+    }
+  }
+}
