@@ -1,5 +1,5 @@
 <div fxLayout="row wrap" class="products-wrapper">
   <div fxFlex="100" fxFlex.gt-sm="25" fxFlex.sm="50" class="col" *ngFor="let productItem of productItems">
-    <eagle-product-item [productItem]="productItem" (clickIconBtn)="onClickIconBtn($event)"></eagle-product-item>
+    <eagle-product-item [productItem]="productItem" (clickIconBtn)="onClickIconBtn($event, productItem)"></eagle-product-item>
   </div>
 </div>

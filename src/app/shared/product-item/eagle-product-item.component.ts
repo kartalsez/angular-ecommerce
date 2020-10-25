@@ -22,6 +22,7 @@ export interface ProductItem {
   oldPrice: number;
   newPrice: number;
   imgUrl: string;
+  count: number;
 }
 
 export enum ClickIconBtnType {
