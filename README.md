@@ -8,4 +8,6 @@
 running with mock datas (Shopping cart, product list, categories, ...).
 * Material design is used.
 * Angular 10. version.
-* Ngrx have not been used yet but it will be added soon.
+* Ngrx added for shoppingcart(add product, remove product actions added.)
+* Ngrx Effects weren't used yet because of there isn't backend services. Later it will be added.
+* ShoppingCart store is root store. Feature store for filter, sort products will be added soon. 

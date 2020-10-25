@@ -14,13 +14,13 @@
             <div class="divider mt-1"></div>
             <div *ngIf="cartItemData.cartItems.length === 0" class="py-1 text-muted text-center">You have no items in your shopping cart.</div>
             <mat-list>
-              <mat-list-item *ngFor="let cartItem_ of cartItemData.cartItems">
+              <mat-list-item *ngFor="let cartItem_ of cartItemData.cartItems; let i = index;">
                   <h3 matLine class="text-muted"> {{cartItem_.name}} </h3>
                   <p matLine class="text-muted">
-                      <bdi>{{cartItem_.count}} x ${{cartItem_.price | number : '1.2-2'}}</bdi>
+                      <bdi>{{cartItem_.count}} x ${{cartItem_.oldPrice | number : '1.2-2'}}</bdi>
                   </p>
-                  <img [src]="cartItem_.imageUrl" style="width: 70px;" alt="image">
-                  <button mat-icon-button color="warn" class="remove" (click)="stopClickPropagate($event)" matTooltip="Remove" matTooltipPosition="before">
+                  <img [src]="cartItem_.imgUrl" style="width: 50px;" alt="image">
+                  <button mat-icon-button color="warn" class="remove" (click)="onRemoveCartItem($event, i)" matTooltip="Remove" matTooltipPosition="before">
                       <mat-icon class="mat-icon-sm">close</mat-icon>
                   </button>
               </mat-list-item>

@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
+import { StoreModule } from '@ngrx/store';
+import { reducer } from './store/eagle-shopping-cart.reducer';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { SharedModule } from './shared/shared.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     CoreModule,
-    SharedModule
+    SharedModule,
+    StoreModule.forRoot({shoppingCart: reducer}),
   ],
   providers: [],
   exports: [
